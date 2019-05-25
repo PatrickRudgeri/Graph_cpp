@@ -1,1 +1,1 @@
-# python-scientific-computing
+# Python scientific computing
