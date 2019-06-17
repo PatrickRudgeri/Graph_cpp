@@ -1,0 +1,91 @@
+# depslib dependency file v1.0
+1556240706 source:c:\users\artur amorim\documents\projetos codeblocks\grafos\main.cpp
+	<iostream>
+	"No.h"
+	"Aresta.h"
+	"Grafo.h"
+
+1556589098 
+
+1556676163 source:c:\users\artur amorim\documents\projetos codeblocks\grafos\src\grafo.cpp
+	"Grafo.h"
+	<iostream>
+
+1556589393 c:\users\artur amorim\documents\projetos codeblocks\grafos\include\grafo.h
+	"No.h"
+
+1556589098 c:\users\artur amorim\documents\projetos codeblocks\grafos\include\no.h
+	<stdio.h>
+	<stdlib.h>
+	"Aresta.h"
+
+1555029422 c:\users\artur amorim\documents\projetos codeblocks\grafos\include\aresta.h
+
+1555029455 source:c:\users\artur amorim\documents\projetos codeblocks\grafos\src\aresta.cpp
+	"Aresta.h"
+	"No.h"
+
+1556589098 source:c:\users\artur amorim\documents\projetos codeblocks\grafos\src\no.cpp
+	"No.h"
+	"Aresta.h"
+	<iostream>
+
+1556240706 source:/home/patrick/Downloads/Grafos/main.cpp
+	<iostream>
+	"No.h"
+	"Aresta.h"
+	"Grafo.h"
+
+1556589098 /home/patrick/Downloads/Grafos/include/No.h
+	<stdio.h>
+	<stdlib.h>
+	"Aresta.h"
+
+1555029422 /home/patrick/Downloads/Grafos/include/Aresta.h
+
+1557184862 /home/patrick/Downloads/Grafos/include/Grafo.h
+	"No.h"
+
+1557160659 source:/home/patrick/Downloads/Grafos/src/Aresta.cpp
+	"../include/Aresta.h"
+	"../include/No.h"
+
+1557185095 source:/home/patrick/Downloads/Grafos/src/Grafo.cpp
+	"../include/Grafo.h"
+	<iostream>
+
+1557170309 source:/home/patrick/Downloads/Grafos/src/No.cpp
+	"../include/No.h"
+	"../include/Aresta.h"
+	<iostream>
+
+1557161114 source:/home/patrick/Downloads/Grafos/src/Fila.cpp
+	<iostream>
+	<cstdlib>
+	"../include/Fila.h"
+
+1557160659 /home/patrick/Downloads/Grafos/include/Fila.h
+	"No.h"
+
+1560730182 source:/home/patrick/Downloads/Grafos/Aresta.cpp
+	"Aresta.h"
+	"No.h"
+
+1560730067 /home/patrick/Downloads/Grafos/Aresta.h
+
+1560729994 /home/patrick/Downloads/Grafos/No.h
+	<stdio.h>
+	<stdlib.h>
+	"Aresta.h"
+
+1560730712 source:/home/patrick/Downloads/Grafos/Grafo.cpp
+	"Grafo.h"
+	<iostream>
+
+1560730713 /home/patrick/Downloads/Grafos/Grafo.h
+	"No.h"
+
+1557533992 source:/home/patrick/Downloads/Grafos/No.cpp
+	<iostream>
+	"No.h"
+
