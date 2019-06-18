@@ -629,22 +629,29 @@ int Grafo::compFortConexas(int *nos, No *N) {
             compFortConexasAux(sc, &N[v]);
     }
 
-//    //---visualização
-//    cout << k << (k == 1 ? " Comp. fortemente conexa" : " Comp. fortemente conexas") << "\n";
-//
-//    for (int j = 0; j < k; j++) {
-//        cout << "COMP." << j << " : ";
-//        for (int i = 0; i < n; i++) {
-//            if (sc[i] == j)
-//                cout << nos[i] << " ";
-//        }
-//        cout << "\n";
-//    }
-//    //----------------
+    //---visualização
+    cout << k << (k == 1 ? " Comp. fortemente conexa" : " Comps. fortemente conexas") << "\n";
+
+    for (int j = 0; j < k; j++) {
+        cout << "COMP." << j << " : ";
+        for (int i = 0; i < n; i++) {
+            if (sc[i] == j)
+                cout << nos[i] << " ";
+        }
+        cout << "\n";
+    }
+    //----------------
 
     delete[] sc;
     return k;
 }
+
+
+
+
+
+
+
 
 
 //----------------------------------------------
@@ -655,6 +662,82 @@ int Grafo::compFortConexas(int *nos, No *N) {
 
 
 ////-----------------------------------------
+
+const int INF = INT32_MAX;
+
+float **Grafo::listToMatAdj() {
+    int i,j;
+
+    float **G = new float *[ordem];
+
+    for (i = 0; i < ordem; i++) {
+        G[i] = new float[ordem];
+
+//        Atribuindo INF para a distancia entre todos os pares, exceto p/ diagonal
+        for (int j = 0; j < ordem; ++j) {
+            G[i][j] = (float) (i == j ? 0 : INF);
+        }
+    }
+
+    No * nos = ListaNo->getProx();
+
+    for (i=0; i < ordem; i++) {
+        j = 0;
+        Aresta *a = nos[i].getAresta();
+
+        while(a != NULL) {
+            j = a->getNoAdj()->getIndex();
+
+            G[i][j] = a->getPeso();
+            a = a->getProxima();
+        }
+    }
+
+//    for (int l = 0; l < ordem; ++l) {
+//        for (int m = 0; m < ordem; ++m) {
+//            cout << G[l][m] << " ";
+//        }
+//        cout << endl;
+//    }
+    return G;
+}
+
+// TODO: falta verificar ciclos negativos
+void Grafo::floyd() {
+    int i, j, k;
+
+    if(!direcionado){
+        cerr << "Grafo não direcionado! Floyd deve ser aplicado apenas em digrafos";
+        return;
+    }
+
+    float **dist = listToMatAdj();
+
+    for (k = 0; k < ordem; k++) {
+        for (i = 0; i < ordem; i++) {
+            for (j = 0; j < ordem; j++) {
+                if (dist[i][k] + dist[k][j] < dist[i][j])
+                    dist[i][j] = dist[i][k] + dist[k][j];
+            }
+        }
+    }
+    printSolucaoFloyd(dist);
+}
+
+void Grafo::printSolucaoFloyd(float **dist) {
+    for (int i = 0; i < ordem; i++)
+    {
+        for (int j = 0; j < ordem; j++)
+        {
+            if (dist[i][j] == INF)
+                printf("%4s", "INF");
+            else
+                printf("%3.f ", dist[i][j]);
+        }
+        cout << "\n";
+    }
+}
+
 
 
 /*

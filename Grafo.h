@@ -36,7 +36,10 @@ public:
 
     int compConexas(int *nos, No *N); //ADD
     int compFortConexas(int *nos, No *N); //ADD
-//    int *ordenacaoTopologica(int *nos, No *ini); // ADD
+
+    void floyd();
+
+    //int *ordenacaoTopologica(int *nos, No *ini); // ADD
 
     /*
     No* buscaNo(int id);
@@ -64,9 +67,13 @@ private:
     //(quicksort)
     void ordenarCaminhos(int *nos, int *vet, int low, int high); //ADD
 
-    void OrdenaListaNo(No* t);
-    bool auxGuloso(No* p);
-    void removeNoGuloso(int i);
+    float **listToMatAdj();
+    void printSolucaoFloyd(float **dist);
+
+
+//    void OrdenaListaNo(No* t);
+//    bool auxGuloso(No* p);
+//    void removeNoGuloso(int i);
 };
 
 #endif // GRAFO_H
